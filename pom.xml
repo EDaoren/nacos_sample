@@ -3,10 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.edaoren</groupId>
-    <artifactId>parent-pom</artifactId>
-    <version>5.0.0-SNAPSHOT</version>
+    <artifactId>nacos-sample</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>parent-pom</name>
+    <name>nacos-sample</name>
     <url>http://maven.apache.org</url>
 
     <parent>
@@ -17,12 +17,12 @@
     </parent>
 
     <modules>
-        <module>dubbo-consumer</module>
-        <module>dubbo-provider</module>
-        <module>dubbo-service-api</module>
+        <module>demo-export</module>
+        <module>demo-dubbo-devtool</module>
     </modules>
 
     <properties>
+        <simple-version>1.0.0-SNAPSHOT</simple-version>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
