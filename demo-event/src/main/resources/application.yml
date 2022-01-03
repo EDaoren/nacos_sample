@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+# RabbitMQ\u8FDE\u63A5\u914D\u7F6E
+spring:
+  application:
+    name: rabbitmq-spring-event
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.50.1:3306/cloud2020?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: root1234
+
+  #====================================rabbitmq config===============================================
+  rabbitmq:
+    addresses: 127.0.0.1:5672
+    username: root
+    password: root
+    virtual-host: /
+    connection-timeout: 15000
+    # RabbitMQ\u6D88\u8D39\u914D\u7F6E
+    listener:
+      simple:
+        auto-startup: true
+        # \u57FA\u672C\u5E76\u53D1\uFF1A5
+        concurrency: 5
+        # \u6700\u5927\u5E76\u53D1\uFF1A10
+        max-concurrency: 10
+        # \u7B7E\u6536\u6A21\u5F0F\uFF1A\u624B\u52A8\u7B7E\u6536
+        acknowledge-mode: manual
+        # \u9650\u6D41\u7B56\u7565\uFF1A\u540C\u4E00\u65F6\u95F4\u53EA\u67091\u6761\u6D88\u606F\u53D1\u9001\u8FC7\u6765\u6D88\u8D39
+        prefetch: 1
+

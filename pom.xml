@@ -19,6 +19,8 @@
     <modules>
         <module>demo-export</module>
         <module>demo-dubbo-devtool</module>
+        <module>demo-event</module>
+        <module>demo-spike</module>
     </modules>
 
     <properties>

@@ -3,14 +3,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.edaoren</groupId>
-    <artifactId>dubbo-provider</artifactId>
-    <name>dubbo-provider</name>
+    <artifactId>spike-provider</artifactId>
+    <name>spike-provider</name>
     <version>5.0.0-SNAPSHOT</version>
     <url>http://maven.apache.org</url>
 
     <parent>
         <groupId>com.edaoren</groupId>
-        <artifactId>demo-export</artifactId>
+        <artifactId>demo-spike</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
@@ -24,11 +24,23 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-registry-nacos</artifactId>
@@ -40,7 +52,7 @@
         </dependency>
         <dependency>
             <groupId>com.edaoren</groupId>
-            <artifactId>dubbo-service-api</artifactId>
+            <artifactId>spike-service-api</artifactId>
             <version>5.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -53,6 +65,48 @@
             <artifactId>demo-dubbo-devtool</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.edaoren</groupId>
+            <artifactId>spike-event</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.esotericsoftware</groupId>
+            <artifactId>kryo</artifactId>
+            <version>4.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>de.javakaffee</groupId>
+            <artifactId>kryo-serializers</artifactId>
+            <version>0.42</version>
+        </dependency>
+
+
+        <!-- redis lock -->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.13.6</version>
+        </dependency>
+        <!-- redis lock -->
     </dependencies>
 
     <build>
@@ -70,7 +124,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.edaoren.SpikeProviderApplication</mainClass>
+                    <mainClass>com.edaoren.DubboProviderApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

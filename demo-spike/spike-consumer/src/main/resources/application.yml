@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: dubbo-consumer
+  profiles:
+      active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    password: root1234
+    username: root
+  aop:
+    auto: true
+
+server:
+  port: 8889
+dubbo:
+  # 注册中心地址
+  registry:
+    address: nacos://127.0.0.1:8848
+  # 协议配置，用于配置提供服务的协议信息，协议由提供方指定，消费方被动接受
+  protocol:
+    port: 20880
+    name: dubbo
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  global-config:
+    # 逻辑删除配置
+    db-config:
+      # 删除前
+      logic-not-delete-value: 1
+      # 删除后
+      logic-delete-value: 0
